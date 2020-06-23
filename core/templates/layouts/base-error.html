@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/assets/images/favicon.png" />
+
+    <title>Django Dashboard StarAdmin - {% block title %}{% endblock %} | AppSeed</title>
+
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/typicons/src/font/typicons.css">
+    <link rel="stylesheet" href="/static/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.addons.css">
+
+    <link rel="stylesheet" href="/static/assets/css/shared/style.css">
+    <link rel="stylesheet" href="/static/assets/css/demo_1/style.css">
+
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+  </head>
+  <body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+
+            {% block content %}{% endblock content %}
+
+        </div>
+
+    </div>
+    <!-- container-scroller -->
+
+    {% include 'includes/scripts.html' %}
+    
+    <!-- Specific JS goes HERE -->
+    {% block javascripts %}{% endblock javascripts %}
+
+  </body>
+
+</html>

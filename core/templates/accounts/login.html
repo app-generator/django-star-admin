@@ -1,67 +1,95 @@
 {% extends "layouts/base-fullscreen.html" %}
 
-{% block title %} Login {% endblock %}
+{% block title %} Login {% endblock title %}
 
-{% block content %}   
+{% block stylesheets %}{% endblock stylesheets %}
 
-    <div class="auth-wrapper">
-        <div class="auth-content">
-            <div class="auth-bg">
-                <span class="r"></span>
-                <span class="r s"></span>
-                <span class="r s"></span>
-                <span class="r"></span>
-            </div>
-            <div class="card">
-                <div class="card-body text-center">
-                    <div class="mb-4">
-                        <i class="feather icon-unlock auth-icon"></i>
-                    </div>
-                    <h3 class="mb-4">Login</h3>
+{% block divclass %} auth-bg-1 {% endblock divclass %}
 
-                    <span class="mb-0 text-muted">
-                        {% if msg %}
-                            {{ msg | safe }}
-                        {% else %}
-                            Default Credentials: test / ApS12_ZZs8
-                        {% endif %} 
+{% block content %}
+
+    <div class="row w-100">
+        <div class="col-lg-4 mx-auto">
+            <div class="auto-form-wrapper">
+            
+            <center>
+                <h2 class="text-center mb-4">Login</h2>
+
+                {% if msg %}
+                    <span class="text-danger">{{ msg | safe }}</span>
+                {% else %}
+                    Use default credentials: <strong>test / ApS12_ZZs8</strong>
+                {% endif %}
+                
+            </center>
+
+            <br />    
+            <form method="post" action="">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                <label class="label">Username</label>
+                <div class="input-group">
+                    {{ form.username }}
+                    <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
                     </span>
-
-                    <br />
-                    <br />
-
-                    <form role="form" method="post" action="">
-
-                        {% csrf_token %}                   
-
-                        <div class="input-group mb-3">
-                            {{ form.username }}
-                        </div>
-                        
-                        <div class="input-group mb-4">
-                            {{ form.password }}
-                        </div>
-                        
-                        <div class="form-group text-left">
-                            <div class="checkbox checkbox-fill d-inline">
-                                <input type="checkbox" name="checkbox-fill-1" id="checkbox-fill-a1" checked="">
-                                <label for="checkbox-fill-a1" class="cr"> Save Details</label>
-                            </div>
-                        </div>
-                        <button type="submit" name="login" class="btn btn-primary shadow-2 mb-4">Login</button>
-
-                    </form>
-
-                    <p class="mb-0 text-muted">Don’t have an account? <a href="{% url 'register' %}" >Signup</a></p>
-                    <br />
-                    <p class="mb-2 text-muted">
-                        &copy; <a target="_blank" rel="noopener noreferrer"  
-                                  href="https://codedthemes.com/">CodedThemes</a> 
-                        - <a target="_blank" rel="noopener noreferrer"  
-                             href="https://appseed.us/boilerplate-code/django-dashboard">Django Boilerplate Dashboard</a>.
-                    </p>
+                    </div>
                 </div>
+                </div>
+                <div class="form-group">
+                <label class="label">Password</label>
+                <div class="input-group">
+                    {{ form.password }}
+                    <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                    </span>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group">
+                <button type="submit" name="login" class="btn btn-primary submit-btn btn-block">Login</button>
+                </div>
+                <div class="form-group d-flex justify-content-between">
+                <div class="form-check form-check-flat mt-0">
+                    <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" checked> Keep me signed in </label>
+                </div>
+                <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
+                </div>
+
+                
+                <div class="text-block text-center my-3">
+                <span class="text-small font-weight-semibold">Not a member?</span>
+                <a href="{% url 'register' %}" class="text-black text-small">Create new account</a>
+                </div>
+            </form>
             </div>
+            <ul class="auth-footer">
+            <li>
+                <a target="_blank" rel="noopener noreferrer" 
+                   href="https://github.com/app-generator/django-dashboard-staradmin">Sources</a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener noreferrer" 
+                   href="https://appseed.us/admin-dashboards/django-dashboard-staradmin">Product</a>
+            </li>
+            <li>
+                <a target="_blank" rel="noopener noreferrer" 
+                   href="https://appseed.us">AppSeed</a>
+            </li>
+            </ul>
+            <p class="footer-text text-center">
+                &copy; <a class="text-white"
+                          target="_blank" rel="sponsored noopener noreferrer" 
+                          href="https://www.bootstrapdash.com/product/star-admin-free/?ref=23">BootstrapDash</a> 
+                     - Coded by <a class="text-white" 
+                          target="_blank" rel="noopener noreferrer"
+                          href="https://appseed.us/">AppSeed</a>
+            </p>
         </div>
     </div>
 

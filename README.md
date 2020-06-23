@@ -1,8 +1,9 @@
-# [Django Dashboard Boilerplate](https://appseed.us/boilerplate-code/django-dashboard)
+# [Django Dashboard StarAdmin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
 
-> Template [boilerplate code](https://appseed.us/boilerplate-code) used by [AppSeed](https://appseed.us) to generate simple admin dashboards coded in [Django](https://www.djangoproject.com/) - Features
+> **Open-Source Admin Dashboard** coded in **Django Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - Features:
 
-- UI Kit: **Datta Able Dashboard** (Lite Version) provided by **CodedThemes**
+- UI Kit: **[Star Admin](https://www.bootstrapdash.com/product/star-admin-free/?ref=23)** (Free Version) provided by **[BootstrapDash](https://www.bootstrapdash.com/?ref=23)**
+- Codebase: [Django Dashboard Boilerplate](https://github.com/app-generator/boilerplate-code-django-dashboard) v1.0.2
 - UI-Ready app, SQLite Database, Django Native ORM
 - Modular design, clean code-base
 - Session-Based Authentication, Forms validation
@@ -13,17 +14,11 @@
 
 > Links
 
-- [Boierplate Code Django Dashboard](https://boilerplate-code-django-dashboard.appseed.us/) - LIVE Demo
+- [Django Dashboard StarAdmin](https://django-dashboard-staradmin.appseed.us/) - LIVE Demo
 - [Boierplate Code Django](https://docs.appseed.us/boilerplate-code/django-dashboard/) - Documentation
-- [Boierplate Code Django Dashboard](https://appseed.us/boilerplate-code/django-dashboard) - Official product page
+- [Django Dashboard StarAdmin](https://appseed.us/admin-dashboards/django-dashboard-staradmin) - Official product page
 - More [Django Admin Dashboards](https://appseed.us/admin-dashboards/django) - index hosted by **[AppSeed](https://appseed.us)**
 - [Open-Source Admin Dashboards](https://appseed.us/admin-dashboards/open-source) - index hosted by **[AppSeed](https://appseed.us)**
-
-> Projects that use this starter
-
-- [Django Corona Dark](https://appseed.us/admin-dashboards/django-dashboard-corona-dark) - [demo](https://django-dashboard-corona-dark.appseed.us/), [sources](https://github.com/app-generator/django-dashboard-corona-dark)
-- [Django DattaAble PRO](https://appseed.us/admin-dashboards/django-dashboard-dattaable-pro) - [demo](https://django-dashboard-dattaable-pro.appseed.us/)
-- [Django Atlantis Dark](https://appseed.us/admin-dashboards/django-dashboard-atlantis-dark) - [demo](https://django-dashboard-atlantis-dark.appseed.us/), [sources](https://github.com/app-generator/django-dashboard-atlantis-dark)
 
 <br />
 
@@ -38,7 +33,7 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 <br />
 <br />
 
-![Boierplate Code Django Dashboard - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/boilerplate-code-django-dashboard/master/media/boilerplate-code-django-dashboard-screen.png)
+![Django Dashboard StarAdmin - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-staradmin/master/media/django-dashboard-staradmin-screen.png)
 
 <br />
 
@@ -46,8 +41,8 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/boilerplate-code-django-dashboard.git
-$ cd boilerplate-code-django-dashboard
+$ git clone https://github.com/app-generator/django-dashboard-staradmin.git
+$ cd django-dashboard-staradmin
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -155,8 +150,8 @@ The application can be easily executed in a docker container. The steps:
 > Get the code
 
 ```bash
-$ git clone https://github.com/app-generator/boilerplate-code-django-dashboard.git
-$ cd boilerplate-code-django-dashboard
+$ git clone https://github.com/app-generator/django-dashboard-staradmin.git
+$ cd django-dashboard-staradmin
 ```
 
 > Start the app in Docker
@@ -221,4 +216,4 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 <br />
 
 ---
-[Django Dashboard Boilerplate](https://appseed.us/boilerplate-code/django-dashboard) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+[Django Dashboard StarAdmin](https://appseed.us/admin-dashboards/django-dashboard-staradmin) - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
