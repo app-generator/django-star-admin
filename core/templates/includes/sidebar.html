@@ -16,7 +16,7 @@
               </a>
             </li>
             <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'index' in segment %} active {% endif %}">
               <a class="nav-link" href="/">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
@@ -42,25 +42,25 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'basic-elements' in segment %} active {% endif %}">
               <a class="nav-link" href="/basic-elements.html">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                 <span class="menu-title">Form elements</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'chartjs' in segment %} active {% endif %}">
               <a class="nav-link" href="/chartjs.html">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                 <span class="menu-title">Charts</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'basic-table' in segment %} active {% endif %}">
               <a class="nav-link" href="/basic-table.html">
                 <i class="menu-icon typcn typcn-bell"></i>
                 <span class="menu-title">Tables</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'icons' in segment %} active {% endif %}">
               <a class="nav-link" href="/icons.html">
                 <i class="menu-icon typcn typcn-user-outline"></i>
                 <span class="menu-title">Icons</span>
