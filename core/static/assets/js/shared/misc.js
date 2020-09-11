@@ -60,8 +60,8 @@ var lightColor = getComputedStyle(document.body).getPropertyValue('--light');
         $("body").prepend('\
           <div class= "item-purchase-banner">\
             <p class="banner-text"></p>\
-              <a href="https://appseed.us/admin-dashboards/django-dashboard-staradmin" target="_blank" class= "banner-button btn btn-primary btn-icon">\
-              See Product\
+              <a href="https://appseed.us/admin-dashboards/django-dashboard-staradmin-pro" target="_blank" class= "banner-button btn btn-primary btn-icon">\
+              PRO Version\
               </a>\
               <span class="toggler-close"><i class="mdi mdi-close"></i></span>\
           </div>\
