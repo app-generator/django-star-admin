@@ -33,7 +33,7 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 <br />
 <br />
 
-![Django Dashboard StarAdmin - Template project provided by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-staradmin/master/media/django-dashboard-staradmin-screen.png)
+![Star Admin Django - Template project coded in Django with basic modules by AppSeed.](https://raw.githubusercontent.com/app-generator/django-dashboard-staradmin/master/media/django-dashboard-staradmin-screen.png)
 
 <br />
 
