@@ -1,4 +1,4 @@
-# [Django Dashboard StarAdmin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
+# [Django Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin)
 
 > **Open-Source Admin Dashboard** coded in **Django Framework** by **AppSeed** [Web App Generator](https://appseed.us/app-generator) - Features:
 
