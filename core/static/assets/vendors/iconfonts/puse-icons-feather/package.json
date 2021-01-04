@@ -1,0 +1,38 @@
+{
+  "name": "puse-icons-feather",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/puse/icons-feather.git"
+  },
+  "description": "A growing collection of beautifully simple icons.",
+  "version": "1.1.0",
+  "keywords": [
+    "icon",
+    "font",
+    "feather",
+    "puse"
+  ],
+  "homepage": "http://colebemis.com/feather/",
+  "author": {
+    "name": "Cole Bemis",
+    "email": "info@colebemis.com"
+  },
+  "contributors": [
+    "Mushex Antaranian <mushex@antaranian.com>"
+  ],
+  "files": [
+    "feather.css",
+    "fonts/"
+  ],
+  "style": "feather.css",
+  "scripts": {
+    "build": "make build",
+    "prepublish": "make build-dev"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "faiton": "^1.0.1"
+  }
+}
