@@ -20,7 +20,7 @@ The pre-built pages of the templates are intuitive and very well-designed. **Sta
 > Links
 
 - [Django Star Admin](https://appseed.us/admin-dashboards/django-dashboard-staradmin) - Official product page
-- [Django Star Admin Demo](https://django-dashboard-staradmin.appseed.us/) - LIVE App
+- [Django Star Admin Demo](https://django-star-admin.appseed-srv1.com/) - LIVE App
 
 <br />
 
