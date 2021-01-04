@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.2] 2021-01-04
+### Improvements 
+
+- Bump Codebase - [Django Boilerplate Dashboard](https://github.com/app-generator/boilerplate-code-django-dashboard) **v1.0.4**
+    - Read properly the `.env` variables. Impacted file: **core/settings.py**.
+
 ## [1.0.1] 2021-01-04
 ### Improvements 
 
