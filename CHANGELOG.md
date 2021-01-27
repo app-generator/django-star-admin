@@ -1,5 +1,12 @@
 # Change Log
 
+
+## Unreleased
+### Minor Improvements
+
+- Update product URL: [Star Admin Django](https://appseed.us/admin-dashboards/django-star-admin)
+    - SEO Enhancement 
+
 ## [1.0.2] 2021-01-04
 ### Improvements 
 
