@@ -43,8 +43,8 @@ PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Suppo
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/django-dashboard-staradmin.git
-$ cd django-dashboard-staradmin
+$ git clone https://github.com/app-generator/django-star-admin.git
+$ cd django-star-admin
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -152,8 +152,8 @@ The application can be easily executed in a docker container. The steps:
 > Get the code
 
 ```bash
-$ git clone https://github.com/app-generator/django-dashboard-staradmin.git
-$ cd django-dashboard-staradmin
+$ git clone https://github.com/app-generator/django-star-admin.git
+$ cd django-star-admin
 ```
 
 > Start the app in Docker
