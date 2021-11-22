@@ -1,11 +1,10 @@
 # Change Log
 
+## [1.0.3] 2021-11-22
+### Initial Release
 
-## Unreleased
-### Minor Improvements
-
-- Update product URL: [Star Admin Django](https://appseed.us/admin-dashboards/django-star-admin)
-    - SEO Enhancement 
+- Bump UI: Star Admin2 **v1.0.0**
+- Bump Codebase: [Django Boilerplate](https://github.com/app-generator/boilerplate-code-flask-dashboard) **v2.0.4**
 
 ## [1.0.2] 2021-01-04
 ### Improvements 
