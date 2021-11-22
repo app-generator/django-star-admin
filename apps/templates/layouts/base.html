@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>
+    Django Star Admin - {% block title %}{% endblock %} | AppSeed
+</title>
+
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/static/assets/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/static/assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/static/assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/static/assets/vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="/static/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="/static/assets/vendors/css/vendor.bundle.base.css">
+
+  <!-- Specific CSS Plugins goes HERE  -->
+  {% block css_plugins %}{% endblock css_plugins %}
+
+  <link rel="stylesheet" href="/static/assets/css/vertical-layout-light/style.css">
+  <link rel="shortcut icon" href="/static/assets/images/favicon.png" />
+
+  <!-- Specific Page CSS goes HERE  -->
+  {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+<body>
+  <div class="container-scroller"> 
+
+    {% include 'includes/navigation.html' %}
+
+    <div class="container-fluid page-body-wrapper">
+      
+      {% include 'includes/right-sidebar.html' %}
+
+      {% include 'includes/sidebar.html' %}
+
+      <div class="main-panel">
+
+        {% block content %}{% endblock content %}
+        
+        {% include 'includes/footer.html' %}
+
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <script src="/static/assets/vendors/js/vendor.bundle.base.js"></script>
+
+  <!-- Specific JS Plugins goes HERE  -->
+  {% block js_plugins %}{% endblock js_plugins %}
+
+  <script src="/static/assets/js/off-canvas.js"></script>
+  <script src="/static/assets/js/hoverable-collapse.js"></script>
+  <script src="/static/assets/js/template.js"></script>
+  <script src="/static/assets/js/settings.js"></script>
+  <script src="/static/assets/js/todolist.js"></script>
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}{% endblock javascripts %}
+
+</body>
+</html>
