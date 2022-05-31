@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.5] 2022-05-30
+### Improvements
+
+- Built with [Star Admin Generator](https://appseed.us/generator/star-admin/)
+  - Timestamp: `2022-05-31 08:58`
+
 ## [1.0.4] 2022-01-16
 ### Improvements
 
