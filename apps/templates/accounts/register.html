@@ -29,50 +29,63 @@
                       Add your credentials
                   {% endif %} 
               </h6>
-              <form method="post" action="" class="pt-3">
 
-                {% csrf_token %}
-
-                <div class="form-group">
-                  {{ form.username }}
-                </div>
-                <span class="text-error">{{ form.username.errors }}</span>
-
-                <div class="form-group">
-                  {{ form.email }}
-                </div>
-                <span class="text-error">{{ form.email.errors }}</span>
-
-                <div class="form-group">
-                  {{ form.password1 }}
-                </div>
-                <span class="text-error">{{ form.password1.errors }}</span>
-
-                <div class="form-group">
-                  {{ form.password2 }}
-                </div>
-                <span class="text-error">{{ form.password2.errors }}</span>
+              {% if success %}
 
                 <div class="mt-3">
-                  <button type="submit" name="register" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
+                  <a href="{% url 'login' %}" 
+                      class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign IN</a>
                 </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Agree Terms
-                    </label>
+                          
+              {% else %}
+
+                <form method="post" action="" class="pt-3">
+
+                  {% csrf_token %}
+
+                  <div class="form-group">
+                    {{ form.username }}
                   </div>
-                  <a href="{% url 'login' %}" class="auth-link text-black">Login</a>
-                </div>
-                <div class="text-center mt-4 fw-light">
-                  &copy; <a target="_blank" href="https://bit.ly/2UTgih5">BootstrapDash</a> 
-                  - coded by AppSeed.
-                  <br/><br/>
-                  <a target="_blank"
-                     href="https://appseed.us/admin-dashboards/django-star-admin">Download Product</a>
-                </div>
-              </form>
+                  <span class="text-error">{{ form.username.errors }}</span>
+
+                  <div class="form-group">
+                    {{ form.email }}
+                  </div>
+                  <span class="text-error">{{ form.email.errors }}</span>
+
+                  <div class="form-group">
+                    {{ form.password1 }}
+                  </div>
+                  <span class="text-error">{{ form.password1.errors }}</span>
+
+                  <div class="form-group">
+                    {{ form.password2 }}
+                  </div>
+                  <span class="text-error">{{ form.password2.errors }}</span>
+
+                  <div class="mt-3">
+                    <button type="submit" name="register" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
+                  </div>
+                  <div class="my-2 d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                      <label class="form-check-label text-muted">
+                        <input type="checkbox" class="form-check-input">
+                        Agree Terms
+                      </label>
+                    </div>
+                    <a href="{% url 'login' %}" class="auth-link text-black">Login</a>
+                  </div>
+                  <div class="text-center mt-4 fw-light">
+                    &copy; <a target="_blank" href="https://bit.ly/2UTgih5">BootstrapDash</a> 
+                    - coded by AppSeed.
+                    <br/><br/>
+                    <a target="_blank"
+                      href="https://appseed.us/product/star-admin/django/">Download Product</a>
+                  </div>
+                </form>
+              
+              {% endif %}  
+                
             </div>
           </div>
         </div>
