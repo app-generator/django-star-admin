@@ -1,7 +1,7 @@
 # [Django Star Admin](https://appseed.us/product/star-admin/django/)
 
-Open-source **Django** project crafted on top of **[Star Admin](https://appseed.us/product/star-admin/django/)**, an open-source `Bootstrap 5` design from `BootstrapDash`.
-The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. `Star Admin` has easy and intuitive responsive design whether it is viewed on retina screens or laptops.
+Open-source **Django** project crafted on top of **[Star Admin](https://appseed.us/product/star-admin/django/)**, an open-source `Bootstrap 5` design from `BootstrapDash`. The product is designed to deliver the best possible user experience with highly customizable feature-rich pages. `Star Admin` has easy and intuitive responsive design whether it is viewed on retina screens or laptops - Designed from [BootstrapDash](https://www.bootstrapdash.com/product/star-admin-free?ref=23).
+
 
 - 👉 [Django Star Admin](https://appseed.us/product/star-admin/django/) - `Product page` 
 - 👉 [Django Star Admin](https://django-star-admin.appseed-srv1.com/) - `LIVE Demo`
