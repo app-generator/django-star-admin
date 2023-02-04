@@ -12,7 +12,7 @@ Open-source **Django** project crafted on top of **[Star Admin](https://appseed.
 > Features: 
 
 - ✅ `Up-to-date Dependencies`
-- ✅ Theme: [Django Admin Star](https://github.com/app-generator/django-admin-star)
+- ✅ Theme: [Django Admin Star](https://github.com/app-generator/django-admin-star) designed by `BootstrapDash`
 - ✅ **Authentication**: `Django.contrib.AUTH`, Registration
 - 🚀 `Deployment` 
   - `CI/CD` flow via `Render`
