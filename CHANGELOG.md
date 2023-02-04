@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.0.7] 2023-02-04
+### Changes
+
+- `Fix Docker` Execution
+  - `Update Settings`: ALLOWED_HOSTS, CSRF_TRUSTED_ORIGINS `sections`
+- Bump UI: [Django Star Admin](https://github.com/app-generator/django-admin-star) `v1.0.4`
+- DOCS Update (readme). New sections:
+  - `How to customize the theme`
+  - Render deployment
+- Configure the project to use `home/templates`
+- Added `custom-footer` sample
+
 ## [1.0.6] 2023-01-10
 ### Changes
 
