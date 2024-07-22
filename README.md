@@ -4,7 +4,7 @@ Open-source **[Django Dashboard](https://appseed.us/admin-dashboards/django/)** 
 
 - 👉 [Django Star Admin](https://appseed.us/product/star-admin/django/) - `Product page` 
 - 👉 [Django Star Admin](https://django-star-admin.appseed-srv1.com/) - `LIVE Demo`
-- 🛒 **[Django Argon Dashboard2 PRO](https://appseed.us/product/argon-dashboard2-pro/django/)** - `Premium Version`
+- 🚀 [Custom Development Services](https://appseed.us/custom-development/) for `StartUPs`, `Small Businesses`, and `Solo-developers`
 
 <br />
 
