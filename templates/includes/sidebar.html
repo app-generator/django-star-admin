@@ -1,0 +1,180 @@
+{% load i18n static admin_star %}
+
+<!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item {% if 'dashboard' in segment %} active {% endif %}">
+      {% if request.user.is_superuser %}
+      <a class="nav-link" href="{% url 'admin:index' %}">
+      {% else %}
+      <a class="nav-link" href="/">
+      {% endif %}
+        <i class="mdi mdi-grid-large menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item {% if 'dynamic_dt' in segment %} active {% endif %}">
+      <a class="nav-link" href="{% url 'dynamic_dt' %}">
+        <i class="mdi mdi-table menu-icon"></i>
+        <span class="menu-title">Dynamic Tables</span>
+      </a>
+    </li>
+
+    <li class="nav-item {% if 'dynamic_api' in segment %} active {% endif %}">
+      <a class="nav-link" href="{% url 'dynamic_api' %}">
+        <i class="mdi mdi-server menu-icon"></i>
+        <span class="menu-title">Dynamic API</span>
+      </a>
+    </li>
+
+    <li class="nav-item {% if 'charts' in segment %} active {% endif %}">
+      <a class="nav-link" href="{% url 'charts' %}">
+        <i class="mdi mdi-chart-bar menu-icon"></i>
+        <span class="menu-title">Charts</span>
+      </a>
+    </li>
+
+    {% admin_get_menu as app_list %}
+    {% if app_list %}
+      {% for app in app_list %}
+        {% if app.has_perms and not app.pinned %}
+        <li class="nav-item {% if 'dashboard' in segment %} active {% endif %}">
+          <a class="nav-link" data-bs-toggle="collapse" href="#submenu-{{ app.app_label }}" aria-expanded="false" aria-controls="submenu-{{ app.app_label }}">
+            <i class="menu-icon mdi {{ app.icon }}"></i>
+            <span class="menu-title">{{ app.label|slice:10 }}{% if app.label|length > 10 %}..{% endif %}</span>
+            <i class="menu-arrow"></i> 
+          </a>
+
+          <div class="collapse {% if 'ui-elements' in parent %} show {% endif %}" id="submenu-{{ app.app_label }}">
+            {% if app.models %}
+            <ul class="nav flex-column sub-menu">
+              {% for model in app.models %}
+              {% if model.url %}
+              <li class="nav-item">
+                <a class="nav-link {% if 'bootstrap-tables' in segment or model.url in request.path|urlencode %} active {% endif %}"
+                  href="{{ model.url }}">
+                  <p>{{ model.label }}</p>
+                </a>
+              </li>
+              {% else %}
+              <li class="nav-item">{{ model.label }}</li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if request.user.is_authenticated and not request.user.is_superuser %}
+    <li class="nav-item nav-category">UI Elements</li>
+    <li class="nav-item {% if 'ui-elements' in parent %} active {% endif %}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <i class="menu-icon mdi mdi-floor-plan"></i>
+        <span class="menu-title">UI Elements</span>
+        <i class="menu-arrow"></i> 
+      </a>
+      <div class="collapse {% if 'ui-elements' in parent %} show {% endif %}" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link {% if 'buttons' in segment %} active {% endif %}" href="{% url 'buttons' %}">Buttons</a></li>
+          <li class="nav-item"> <a class="nav-link {% if 'dropdowns' in segment %} active {% endif %}" href="{% url 'dropdowns' %}">Dropdowns</a></li>
+          <li class="nav-item"> <a class="nav-link {% if 'typography' in segment %} active {% endif %}" href="{% url 'typography' %}">Typography</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item nav-category">Forms and Datas</li>
+    <li class="nav-item {% if 'form-elements' in parent %} active {% endif %}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+        <i class="menu-icon mdi mdi-card-text-outline"></i>
+        <span class="menu-title">Form elements</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse {% if 'form-elements' in parent %} show {% endif %}" id="form-elements">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link {% if 'basic-elements' in segment %} active {% endif %}" href="{% url 'basic_elements' %}">Basic Elements</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item {% if 'charts' in parent %} active {% endif %}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+        <i class="menu-icon mdi mdi-chart-line"></i>
+        <span class="menu-title">Charts</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse {% if 'charts' in parent %} show {% endif %}" id="charts">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link {% if 'chartjs' in segment %} active {% endif %}" href="{% url 'chartjs' %}">ChartJs</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item {% if 'tables' in parent %} active {% endif %}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+        <i class="menu-icon mdi mdi-table"></i>
+        <span class="menu-title">Tables</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse {% if 'tables' in parent %} show {% endif %}" id="tables">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link {% if 'basic-table' in segment %} active {% endif %}" href="{% url 'basic_table' %}">Basic table</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item {% if 'icons' in parent %} active {% endif %}">
+      <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+        <i class="menu-icon mdi mdi-layers-outline"></i>
+        <span class="menu-title">Icons</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse {% if 'icons' in parent %} show {% endif %}" id="icons">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link {% if 'md-icons' in segment %} active {% endif %}" href="{% url 'md_icons' %}">Mdi icons</a></li>
+        </ul>
+      </div>
+    </li>
+    {% endif %}
+    <li class="nav-item nav-category">pages</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <i class="menu-icon mdi mdi-account-circle-outline"></i>
+        <span class="menu-title">User Pages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="auth">
+        <ul class="nav flex-column sub-menu">
+          {% if request.user.is_superuser %}
+          <li class="nav-item"> <a class="nav-link" href="{% url 'admin:password_change' %}"> Change Password </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'admin:logout' %}"> Logout </a></li>
+          {% else %}
+            {% if request.user.is_authenticated %}
+            <li class="nav-item"> <a class="nav-link" href="{% url 'password_change' %}"> Change Password </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'logout' %}"> Logout </a></li>
+            {% else %}
+            <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}"> Login </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'register' %}"> Register </a></li>
+            {% endif %}
+          {% endif %}
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item nav-category">help</li>
+    <li class="nav-item">
+      <a class="nav-link"
+         target="_blank" 
+         href="https://github.com/app-generator/django-star-admin">
+        <i class="menu-icon mdi mdi-file-document"></i>
+        <span class="menu-title">Documentation</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         target="_blank" 
+         href="https://appseed.us/support/">
+        <i class="menu-icon mdi mdi-rocket text-danger"></i>
+        <span class="menu-title text-danger fw-bold">Support</span>
+      </a>
+    </li>    
+  </ul>
+</nav>

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os, random, string
 from pathlib import Path
 from dotenv import load_dotenv
+from str2bool import str2bool
 
 load_dotenv()  # take environment variables from .env.
 
@@ -23,15 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-if not SECRET_KEY:
-    SECRET_KEY = ''.join(random.choice( string.ascii_lowercase  ) for i in range( 32 ))
+SECRET_KEY = os.environ.get('SECRET_KEY', 'Super_Secr3t_9999')
 
 # Render Deployment Code
-DEBUG = 'RENDER' not in os.environ
+DEBUG = str2bool(os.environ.get('DEBUG'))
 
 # Docker HOST
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 # Add here your deployment HOSTS
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://localhost:5085']
@@ -43,15 +42,30 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_star.apps.AdminStarConfig',
+    'jazzmin',
     "django.contrib.admin",
+    'admin_star.apps.AdminStarConfig',
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "home",
+    # Serve UI pages
+    "apps.pages",
+
+    # Dynamic DT
+    "apps.dyn_dt",
+
+    # Dynamic API
+    "apps.dyn_api",
+
+    # Charts
+    "apps.charts",
+
+    # Tooling API-GEN
+    'rest_framework',            # Include DRF           # <-- NEW 
+    'rest_framework.authtoken',  # Include DRF Auth      # <-- NEW   
 ]
 
 MIDDLEWARE = [
@@ -65,9 +79,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "core.urls"
+ROOT_URLCONF = "config.urls"
 
-HOME_TEMPLATES = os.path.join(BASE_DIR, 'home', 'templates')
+HOME_TEMPLATES = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
@@ -85,7 +99,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "core.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
@@ -151,8 +165,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 #if not DEBUG:
 #    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -164,3 +183,24 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# ### DYNAMIC_DATATB Settings ###
+DYNAMIC_DATATB = {
+    # SLUG -> Import_PATH 
+    'product'  : "apps.pages.models.Product",
+}
+########################################
+
+# Syntax: URI -> Import_PATH
+DYNAMIC_API = {
+    # SLUG -> Import_PATH 
+    'product'  : "apps.pages.models.Product",
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+########################################

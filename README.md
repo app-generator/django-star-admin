@@ -77,7 +77,7 @@ The project is coded using a simple and intuitive structure presented below:
 ```bash
 < PROJECT ROOT >
    |
-   |-- core/                            
+   |-- config/                            
    |    |-- settings.py                  # Project Configuration  
    |    |-- urls.py                      # Project Routing
    |
@@ -138,7 +138,7 @@ When the project requires customization, we need to copy the original file that 
 
 - ✅ `Step 1`: create the `templates` DIRECTORY inside the `home` app
 - ✅ `Step 2`: configure the project to use this new template directory
-  - `core/settings.py` TEMPLATES section
+  - `config/settings.py` TEMPLATES section
 - ✅ `Step 3`: copy the `footer.html` from the original location (inside your ENV) and save it to the `home/templates` DIR
   - Source PATH: `<YOUR_ENV>/LIB/admin_star/template/includes/footer.html`
   - Destination PATH: `<PROJECT_ROOT>home/templates/includes/footer.html`
